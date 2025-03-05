@@ -1,0 +1,8 @@
+PermitRootLogin no
+
+PubkeyAuthentication yes
+PasswordAuthentication no
+KbdInteractiveAuthentication no
+
+ClientAliveInterval 60
+ClientAliveCountMax 3

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://deno.land/x/deno@v2.1.9/cli/schemas/config-file.v1.json",
+  "fmt": {
+    "singleQuote": true
+  },
+  "imports": {
+    "fastify": "npm:fastify@5.2.1",
+    "k8s-apis": "jsr:@cloudydeno/kubernetes-apis@0.5.2",
+    "k8s-client": "jsr:@cloudydeno/kubernetes-client@0.7.3",
+    "lru-cache": "npm:lru-cache@11.0.2",
+    "node-types": "npm:@types/node@22.13.1",
+    "pino": "npm:pino@9.6.0",
+    "redbird": "npm:redbird@1.0.2"
+  },
+  "tasks": {
+    "dev": "test -f .env.local && deno run --env-file=.env --env-file=.env.local --allow-all main.ts || deno run --env-file=.env --allow-all main.ts"
+  }
+}

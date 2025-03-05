@@ -1,0 +1,8 @@
+name: play-nginx
+
+services:
+  app:
+    build: .
+    image: play-nginx:v0
+    ports:
+      - 50580:80

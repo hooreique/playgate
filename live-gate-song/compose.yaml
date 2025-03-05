@@ -1,0 +1,8 @@
+name: live-gate-song
+
+services:
+  app:
+    build: .
+    image: live-gate-song:v0
+    ports:
+      - 2222:22
