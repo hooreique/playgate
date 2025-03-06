@@ -93,6 +93,8 @@
         ${pkgs.nix}/bin/nix develop --command env SHELL=${pkgs.zsh}/bin/zsh ${nvimNightly}/bin/nvim'';
       ns = ''
         ${pkgs.nix}/bin/nix-shell --run "SHELL=${pkgs.zsh}/bin/zsh ${nvimNightly}/bin/nvim"'';
+      nz = ''
+        ${pkgs.nix}/bin/nix develop --command env SHELL=${pkgs.zsh}/bin/zsh RPS1=" devShell" zsh'';
     };
   };
 
