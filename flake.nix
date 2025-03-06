@@ -19,9 +19,9 @@
             pkgs.deno
           ];
 
-          shellHook = ''
-            export RPS1=" devShell"
-          '';
+          # shellHook = ''
+          #   echo hello
+          # '';
         };
       });
 }
