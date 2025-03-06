@@ -1,5 +1,5 @@
 {
-  description = "inconcon";
+  description = "router";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -12,16 +12,8 @@
       in {
         devShells.default = pkgs.mkShell {
           buildInputs = [
-            pkgs.kubectl
-            pkgs.minikube
-            pkgs.dockerfile-language-server-nodejs
-            pkgs.nil
             pkgs.deno
           ];
-
-          # shellHook = ''
-          #   echo hello
-          # '';
         };
       });
 }

@@ -12,14 +12,14 @@ minikube image ls
 
 eval $(minikube docker-env --shell zsh)
 
-# 빌드에 한 3~4분 걸림
-docker compose --file live-gate-song/compose.yaml build app
+# 빌드 오래 걸림
+docker compose build app
 
 #
 #
 #
 
-kubectl apply --filename live-gate-song/manifest.yaml
+kubectl apply --filename manifest.yaml
 
 kubectl get all
 
@@ -41,7 +41,7 @@ ssh -p 2222 song@localhost
 #
 #
 
-docker compose --file play-target/compose.yaml build app
+docker compose --file ../play-target/compose.yaml build app
 
 kubectl run -it --rm --restart=Never busybox --image=busybox -- nslookup play-nginx
 
@@ -49,4 +49,4 @@ kubectl get pods -o wide
 
 kubectl run -it --rm --restart=Never curl-test --image=curlimages/curl -- curl http://<POD_IP>:80/index.html
 
-kubectl replace --force --filename play-target/manifest.yaml
+kubectl replace --force --filename ../play-target/manifest.yaml
