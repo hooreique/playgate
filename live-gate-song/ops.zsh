@@ -7,6 +7,10 @@ minikube delete --all
 minikube status
 
 minikube start
+# 위 명령 후 ssh 프로세스를 찾아보면 아래 두 개가 추가됨을 확인할 수 있다.
+#   $ ps aux | grep -i ssh
+#   root   Ss   0:00 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+#   root   Ss   0:00 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
 
 minikube image ls
 
@@ -33,6 +37,7 @@ kubectl port-forward pod/live-gate-song-0 2222:22
 
 ssh-keygen -f '/home/song/.ssh/known_hosts' -R '[localhost]:2222'
 
+# git ssh 통신용 키
 scp -P 2222 <PRIVATE_KEY> song@localhost:~/.ssh/
 
 ssh -p 2222 song@localhost
